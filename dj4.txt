@@ -1,0 +1,29 @@
+
+products_contains = Product.objects.filter(name__contains="Iphone")
+products_contains
+
+
+brand_exact = Brand.objects.filter(name__exact="Apple")
+brand_exact_apple
+
+
+brands_startswith = Brand.objects.filter(name__istartswith="Pro")
+brands_startswith_a
+
+
+products_endswith = Product.objects.filter(name__endswith="13")
+products_endswith_pro
+ 
+
+products_ordered_by_price = Product.objects.order_by('price')
+products_ordered_by_price
+
+
+
+products_ordered_by_price_desc = Product.objects.order_by('-price')
+products_ordered_by_price_desc
+
+
+
+products_contains_or_price_gt = Product.objects.filter(Product(name__contains="") | Product(price__gt=1000))
+print(products_contains_or_price_gt)
